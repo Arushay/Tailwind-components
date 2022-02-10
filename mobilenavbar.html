@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Model - Tailwind</title>
+</head>
+
+<body>
+    <!--creating a model using tailwind -->
+    <div class="w-full h-screen bg-purple-500 text-white flex flex-col justify-center items-center ">
+        <p class="text-2xl font-medium">Click here to open the model!</p>
+        <button class="py-2 px-4 my-5 bg-gray-100 text-purple-400 font-bold rounded" id="openBtn">Open Model</button>
+    </div>
+
+    <!-- overly effect -->
+    <div class="fixed hidden inset-0 bg-purple-500 bg-opacity-50 overflow-y-auto h-screen w-full" id="model">
+        <!--Model-->
+        <div class="relative z-10 mx-auto p-5 top-32 border w-84 md:w-1/3 shadow-lg rounded-md text-white">
+            <div class="mt-3 text-gray-800 text-center">
+                <h1 class="font-bold text-2xl pb-5 text-white">Model</h1>
+                <p class="text-white">Lorem ipsum, dolor sit amet conus obcaecati quos ea, id temporibus dolorem veniam delectus laboriosam
+                    nulla. I </p>
+                <div class="items-center px-4 py-5">
+                    <button id="closeBtn"
+                        class="bg-purple-500 text-white font-bold px-4 py-2 w-full rounded hover:bg-purple-700">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+      const openBtn =  document.getElementById("openBtn");
+      const model = document.getElementById("model");
+      const closeBtn = document.getElementById("closeBtn");
+
+      openBtn.addEventListener('click', () => {
+          model.style.display = 'block';
+      });
+
+      // close model
+      closeBtn.addEventListener('click', () => {
+          model.style.display = 'none';
+      });
+
+      window.addEventListener('click', (e)=>{
+          if (e.target === model) {
+            model.style.display = 'none';
+          }
+      });
+
+    </script>
+
+</body>
+
+</html>

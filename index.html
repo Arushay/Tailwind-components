@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header class="px-4 md:px-12 lg:px-24 h-20 text-white bg-purple-900 fixed w-full items-center flex justify-between">
+       <a href="#" class="text-2xl font-bold">Filya</a>
+       <nav>
+           <button class="md:hidden" @click="navbarOpen = !navbarOpen">
+
+           </button>
+        <ul class="flex flex-col justify-evenly items-center transform translate-x-full transition duration-200
+         md:relative md:flex md:flex-row md:min-h-0 md:translate-x-0  md:space-y-0 md:p-0 fixed left-0 right-0 min-h-screen" 
+         :class="{'translate-x-full': !navbarOpen, 'translate-x-0: navbarOpen}">
+            <li class="md:px-2 cursor-pointer "><a href="#">Home</a> </li>
+            <li class="md:px-2 cursor-pointer"><a href="#">About</a> </li>
+            <li class="md:px-2 cursor-pointer"><a href="#">Catalogue</a> </li>
+            <li class="md:px-2 cursor-pointer"><a href="#">Projects</a> </li>
+        </ul>
+       </nav>
+    </header>
+
+    
+</body>
+
+</html>
